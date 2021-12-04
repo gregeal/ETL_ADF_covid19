@@ -1,0 +1,16 @@
+{
+	"name": "ADLSLinkedService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"adlsContainer": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adlsgreg.dfs.core.windows.net/"
+		}
+	}
+}

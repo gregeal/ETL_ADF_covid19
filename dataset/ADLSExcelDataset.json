@@ -1,0 +1,33 @@
+{
+	"name": "ADLSExcelDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSLinkedService",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"adlsContainer": "input"
+			}
+		},
+		"parameters": {
+			"excelsheetName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": {
+				"value": "@dataset().excelsheetName",
+				"type": "Expression"
+			},
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Expenses.xlsx",
+				"fileSystem": "input"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

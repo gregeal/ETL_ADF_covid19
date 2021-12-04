@@ -1,0 +1,24 @@
+{
+	"name": "tr_ingest_from_sorce",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingest_population_data",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/population/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/449912a3-fc18-46b6-bf5c-d07a0748901e/resourceGroups/gregRG/providers/Microsoft.Storage/storageAccounts/gregblobsa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

@@ -1,0 +1,70 @@
+{
+	"name": "ETL_Rest_csv_to_Db",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow2",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"source2": {
+								"excelsheetName": "Github"
+							},
+							"sink1": {
+								"tableName": "expenses"
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			},
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Data flow1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-28.canadacentral.logic.azure.com:443/workflows/f7436484563e4ce7aae1de868fccd87b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=bh-RKVC3blN2Va6ZBl0habN-YJVgmxC_1iMls33k7Xs",
+					"method": "POST",
+					"body": {
+						"value": "{\n\"pipeline\":\"@{pipeline().Pipeline}\",\n\"datafactoryname\":\"@{pipeline().DataFactory}\",\n\"runid\":\"@{pipeline().RunId}\"\n}",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-11-29T02:42:06Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

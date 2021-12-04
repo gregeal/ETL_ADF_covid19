@@ -1,0 +1,9 @@
+{
+	"name": "ADFgreg",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9bb6f3f2-8cf2-4a3a-8cfa-79184405f389",
+		"tenantId": "60cb6e91-f7a5-43e3-801f-dd44ac32881c"
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"name": "ADLSRestJsonDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSLinkedService",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"adlsContainer": "input"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "restdata.json",
+				"fileSystem": "input"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

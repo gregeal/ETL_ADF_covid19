@@ -1,0 +1,16 @@
+{
+	"name": "RestAPIDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestAPILinkedService",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"restURL": "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

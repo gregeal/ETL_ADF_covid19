@@ -1,0 +1,11 @@
+{
+	"name": "ls_adlsgen1_raw_csv",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adlsgreg.dfs.core.windows.net"
+		}
+	}
+}
