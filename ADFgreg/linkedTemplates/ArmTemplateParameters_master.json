@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFgreg"
+		},
+		"AzureSqlDataset_connectionString": {
+			"value": ""
+		},
+		"ls_ablob_gregblobsa_connectionString": {
+			"value": ""
+		},
+		"ls_adls_adlsgreg2_accountKey": {
+			"value": ""
+		},
+		"ls_adls_raw_accountKey": {
+			"value": ""
+		},
+		"ADLSLinkedService_properties_typeProperties_url": {
+			"value": "https://adlsgreg.dfs.core.windows.net/"
+		},
+		"RestAPILinkedService_properties_typeProperties_url": {
+			"value": "@{linkedService().restURL}"
+		},
+		"ls_adls_adlsgreg2_properties_typeProperties_url": {
+			"value": "https://adlsgreg2.dfs.core.windows.net/"
+		},
+		"ls_adls_cases_deaths_csv1_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
+		"ls_adls_raw_properties_typeProperties_url": {
+			"value": "https://adlsgreg2.dfs.core.windows.net/"
+		},
+		"ls_adlsgen1_raw_csv_properties_typeProperties_url": {
+			"value": "https://adlsgreg.dfs.core.windows.net"
+		},
+		"tr_ingest_from_sorce_properties_typeProperties_scope": {
+			"value": "/subscriptions/449912a3-fc18-46b6-bf5c-d07a0748901e/resourceGroups/gregRG/providers/Microsoft.Storage/storageAccounts/gregblobsa"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
