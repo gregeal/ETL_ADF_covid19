@@ -212,7 +212,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy ecdc data",
+						"name": "Copy ecdc data1",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
